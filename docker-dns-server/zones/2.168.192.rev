@@ -1,0 +1,17 @@
+$TTL 86400
+@   IN  SOA  ns1.doly.vn. admin.doly.vn. (
+        2025032701  ; Serial
+        3600        ; Refresh
+        1800        ; Retry
+        604800      ; Expire
+        86400 )     ; Minimum TTL
+
+; Define Name Server
+@   IN  NS  ns1.doly.vn.
+
+; PTR Records (Reverse DNS)
+11  IN  PTR  doly.vn.
+11  IN  PTR  ns1.doly.vn.
+11  IN  PTR  mail.doly.vn.
+11  IN  PTR  www.doly.vn.
+11  IN  PTR  ftp.doly.vn.

@@ -1,0 +1,17 @@
+$TTL 86400
+@   IN  SOA ns1.doly.vn. admin.doly.vn. (
+        2025032701  ; Serial
+        3600        ; Refresh
+        1800        ; Retry
+        604800      ; Expire
+        86400 )     ; Minimum TTL
+
+; Define Name Servers
+@   IN  NS ns1.doly.vn.
+
+; Define A Records (IP mappings)
+ns1     IN  A   192.168.2.11
+www     IN  A   192.168.2.11
+mail    IN  A   192.168.2.11
+ftp     IN  A   192.168.2.11
+@       IN  A   192.168.2.11
