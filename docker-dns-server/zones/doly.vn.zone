@@ -11,7 +11,7 @@ $TTL 86400
 
 ; Define A Records (IP mappings)
 ns1     IN  A   192.168.2.11
-www     IN  A   192.168.2.11
+www     IN  A   192.168.2.12
 mail    IN  A   192.168.2.11
 ftp     IN  A   192.168.2.11
 @       IN  A   192.168.2.11
