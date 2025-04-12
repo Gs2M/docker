@@ -4,7 +4,7 @@ services:
   centos9-dns:
     build: # build image
       context: ./docker-dns-server
-      dockerfile: Dockerfile  # Optional if your Dockerfile is named "Dockerfile"
+      dockerfile: Dockerfile
     container_name: centos9-dns
     networks:
       my-dns-network:
@@ -17,12 +17,28 @@ services:
   centos9-apache:
     build:
       context: ./docker-apache-server
+      dockerfile: Dockerfile
     container_name: centos9-apache-server
     ports:
       - "8080:80"
     networks:
       my-dns-network:
         ipv4_address: 192.168.2.12
+    depends_on:
+      - centos9-dns
+    dns:
+      - 192.168.2.11
+    stdin_open: true
+    tty: true
+
+  ubuntu-client:
+    build: # build image
+      context: ./ubuntu-client
+      dockerfile: Dockerfile  # Optional if your Dockerfile is named "Dockerfile"
+    container_name: ubuntu-client
+    networks:
+      my-dns-network:
+        ipv4_address: 192.168.2.100
     depends_on:
       - centos9-dns
     dns:
