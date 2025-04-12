@@ -13,5 +13,5 @@ $TTL 86400
 11  IN  PTR  doly.vn.
 11  IN  PTR  ns1.doly.vn.
 11  IN  PTR  mail.doly.vn.
-11  IN  PTR  www.doly.vn.
+12  IN  PTR  www.doly.vn.
 11  IN  PTR  ftp.doly.vn.
