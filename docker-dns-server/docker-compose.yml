@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  centos9-dns:
+    build: # build image
+      context: .
+      dockerfile: Dockerfile  # Optional if your Dockerfile is named "Dockerfile"
+    container_name: centos9-dns
+    networks:
+      my-dns-network:
+        ipv4_address: 192.168.2.11
+    dns:
+      - 192.168.2.11
+    stdin_open: true
+    tty: true
+
+networks:
+  my-dns-network:
+    external: true
+    name: my-dns-network

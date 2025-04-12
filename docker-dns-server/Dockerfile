@@ -16,6 +16,8 @@ RUN chown -R named:named /var/named \
         && chown named:named /etc/named.conf \
         && chmod 777 /etc/named.conf \
         && chmod 777 /var/named
-
+        
+EXPOSE 53/udp
+EXPOSE 53/tcp
 # Start the BIND service
 CMD ["/bin/bash", "-c", "named -g & /bin/bash"]
